@@ -15,11 +15,13 @@ DELAY = 1.5
 def main():
     rows = [l.rstrip('\n').split('\t') for l in open(os.path.join(RAW, 'list.tsv'))]
     rows = [tuple(r) for r in EXTRA] + [tuple(r) for r in rows]
+    if len(sys.argv) > 1 and sys.argv[1] == 'reverse':   # run a 2nd worker from the other end
+        rows = rows[::-1]
     os.makedirs(os.path.join(RAW, 'html'), exist_ok=True)
     s = requests.Session(); s.headers['User-Agent'] = UA
     for n, (lang, typ, lid, badge, title) in enumerate(rows):
         out = os.path.join(RAW, 'html', lid + '.html.gz')
-        if os.path.exists(out):
+        if os.path.exists(out) or os.path.exists(out + '.none'):
             continue
         url = f'https://lex.uz/{"ru/" if lang == "ru" else ""}docs/{lid}'
         for a in range(5):
@@ -31,6 +33,9 @@ def main():
                     os.replace(out + '.tmp', out)
                     break
                 print('HTTP', r.status_code, url, file=sys.stderr, flush=True)
+                if r.status_code == 200:      # page without text (card only / PDF only)
+                    open(out + '.none', 'w').close()
+                    break
             except Exception as e:
                 print('ERR', url, e, file=sys.stderr, flush=True)
             time.sleep(15 * (a + 1))
