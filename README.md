@@ -8,7 +8,20 @@ Retrieved: **2026-10-12**.
 
 ## Coverage
 
-__COUNTS__
+| Path | Contents | Files |
+|---|---|---:|
+| `uz/konstitutsiya/` | Constitution (2023), Uzbek | 1 |
+| `uz/kodekslar/` | Codes, Uzbek (incl. the Karakalpak-language Election Code text listed by the database) | 21 |
+| `uz/qonunlar/<year>/` | Laws in force, Uzbek | 1,255 |
+| `uz/qoraqalpogiston/` | Constitution and laws of the Republic of Karakalpakstan (Uzbek / Karakalpak) | 22 |
+| `ru/konstitutsiya/` | Constitution, Russian | 1 |
+| `ru/kodeksy/` | Codes, Russian | 20 |
+| `ru/zakony/<year>/` | Laws in force, Russian | 1,253 |
+| `ru/karakalpakstan/zakony/` | Laws of Karakalpakstan, Russian | 4 |
+| **Total** | | **2,577** |
+
+Of the 126 Karakalpakstan laws listed as in force in Uzbek, 105 have no text page on lex.uz (card
+only) and are therefore missing.
 
 All acts of the following types that the National Database of Legislation marks as **in force**
 (status *Амалдаги / Действующий*), in their **current consolidated version**:
@@ -22,7 +35,7 @@ All acts of the following types that the National Database of Legislation marks 
 
 Amendment provenance notes of the database (e.g. "(… Қонуни таҳририда …)") are kept as block
 quotes. LexUZ editorial commentaries and classifier indexes (hidden by default on the site) are
-dropped. A handful of acts whose page shows no text (card or PDF only) are missing.
+dropped. Acts whose page shows no text (card or PDF only) are missing.
 
 **Not covered:** presidential decrees and resolutions, government resolutions, ministerial and
 agency acts, local acts, international treaties (tens of thousands of documents; available on
